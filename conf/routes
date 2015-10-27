@@ -1,0 +1,28 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                           controllers.Application.index
+
+
+#all user details
+GET /allusers                       controllers.Application.showall
+
+
+#user details by user_ID
+GET     /show/:user_id                       controllers.Application.show(user_id)
+
+#exam details by user_ID
+GET     /exam/user/:user_id             controllers.Application.exambyuserID(user_id)
+
+#store user response for exam_id
+GET     /exam/response/:exam_id          controllers.Application.examResbyexamID(exam_id)
+
+GET     /exam/User_Res/:exam_id         controllers.Application.showExamRes(exam_id)
+
+
+
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
