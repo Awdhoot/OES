@@ -1,4 +1,19 @@
-This is your new Play application
+This is your new Play application for OES 
 =================================
 
 This file will be packaged with your application, when using `activator dist`.
+
+List of MongoDB tables used (so far) in this project:
+1) Course (course_id,course_name,duration_In_Min,description)
+2)Section(section_id,name,description)
+3)Course_Section(course_id,section_id,weightage)
+4)USer(user_id,user_name,pwd)
+5)Exam(exam_id,user_id,course_id,result)
+6)QBank(question_id,section_id,question,ch1,ch2,ch3,ch4,correctans,)
+7)Exam_Response(exam_id,question_id,user_response,result)
+
+Database mappings are as follows :
+1)ONE Course_ID has MANY section_id and MANY weightage 
+2)ONE exam_id has ONE course_id and ONE user_id associated with it
+3)ONE user_id has MANY exam_id for MANY course_id
+4)ONE section_id has MANY question_id
